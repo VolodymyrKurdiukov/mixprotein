@@ -24,3 +24,13 @@ let pageSlider = new Swiper('.page', {
 
 	}
 });
+
+$(document).ready(function () {
+	$('.screen-sixth__title').click(function (event) {
+		if ($('.screen-sixth__column').hasClass('one')) {
+			$('.screen-sixth__title').not($(this)).removeClass('active');
+			$('.screen-sixth__text').not($(this).next()).slideUp(300);
+		}
+		$(this).toggleClass('active').next().slideToggle(300);
+	});
+});
