@@ -75,7 +75,7 @@ DynamicAdapt.prototype.moveTo = function (place, element, destination) {
 		return;
 	}
 	destination.children[place].insertAdjacentElement('beforebegin', element);
-}
+};
 
 DynamicAdapt.prototype.moveBack = function (parent, element, index) {
 	element.classList.remove(this.daClassname);
@@ -84,7 +84,7 @@ DynamicAdapt.prototype.moveBack = function (parent, element, index) {
 	} else {
 		parent.insertAdjacentElement('beforeend', element);
 	}
-}
+};
 
 DynamicAdapt.prototype.indexInParent = function (parent, element) {
 	const array = Array.prototype.slice.call(parent.children);
@@ -238,4 +238,9 @@ $(document).ready(function () {
 			pageSlider.slideTo(0, 1000);
 		}, 175);
 	});
+
+
 });
+
+
+
