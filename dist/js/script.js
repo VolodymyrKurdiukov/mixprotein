@@ -212,6 +212,29 @@ function setScrollType() {
 pageSlider.init();
 
 
+const counters = document.querySelectorAll('.composition__number');
+const speed = 200;
+
+counters.forEach(counter => {
+	const animate = () => {
+		const value = +counter.getAttribute('akhi');
+		const data = +counter.innerText;
+
+		const time = value / speed;
+		if (data < value) {
+			counter.innerText = Math.ceil(data + time);
+			setTimeout(animate, 60);
+		} else {
+			counter.innerText = value;
+		}
+
+	};
+
+	animate();
+});
+
+
+
 $(document).ready(function () {
 	$('.screen-sixth__title').click(function (event) {
 		if ($('.screen-sixth__column').hasClass('one')) {
